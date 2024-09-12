@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    h2,h1{
+        color: rgb(255, 104, 212);
+    }
+
+    li{
+        list-style: none;
+    }
+    body{
+        text-align: center;
+        
+    }
+
+
+</style>
+<body style="font-family:Handjet; font-size: 2rem; ">
+    <% const dados = data %>
+    <% const comomDivisor = 10 %>
+
+
+    <h1><%= dados.name %></h1>
+
+    <div>
+        <p>
+            altura:
+                    <%= dados.height/comomDivisor %>
+            m        
+        </p>
+        
+        <p>
+            peso:
+                <%= dados.weight/comomDivisor %>
+            kg
+        </p>
+    </div>
+    
+    <h2 style="margin-top: 0px;">Types</h2>
+    <ul>
+        <% data.types.forEach(element => { %>
+            <li>
+                <%= element.type.name %>
+            </li>
+        <% }) %>
+    </ul>
+
+    <h2>Habilidades</h2>
+    <ul>
+        <% dados.abilities.forEach(element => { %>
+            <li><%= element.ability.name %></li>
+        <% }) %>
+    </ul>
+
+    <h2>Movimentos</h2>
+    <ul>
+        <% dados.moves.forEach(element => { %>
+            <li><%= element.move.name %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
